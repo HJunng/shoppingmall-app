@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Skeleton from 'react-loading-skeleton';
 
 export const Products = () => {
 
@@ -29,19 +30,35 @@ export const Products = () => {
   const Loading = () => {
     return(
       <>
-        Loading....
+        <div className="col-md-3">
+          <Skeleton height={350}/>
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350}/>
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350}/>
+        </div>
+        <div className="col-md-3">
+          <Skeleton height={350}/>
+        </div>
       </>
     )
+  };
+
+  const filterProduct = (product) => {
+    const updatedList = data.filter((x)=>x.category === product);
+    setFilter(updatedList);
   }
   const ShowProducts = () => {
     return(
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button className="btn btn-lg btn-outline-dark me-3">전체</button>
-          <button className="btn btn-outline-dark me-3 btn-lg">남성의류</button>
-          <button className="btn btn-lg btn-outline-dark me-3">여성의류</button>
-          <button className="btn btn-lg btn-outline-dark me-3">전자기기</button>
-          <button className="btn btn-lg btn-outline-dark me-3">쥬얼리</button>
+          <button className="btn btn-lg btn-outline-dark me-3" onClick={() => setFilter(data)}>전체</button>
+          <button className="btn btn-outline-dark me-3 btn-lg" onClick={() => filterProduct("men's clothing")}>남성의류</button>
+          <button className="btn btn-lg btn-outline-dark me-3" onClick={() => filterProduct("women's clothing")}>여성의류</button>
+          <button className="btn btn-lg btn-outline-dark me-3" onClick={() => filterProduct("electronics")}>전자기기</button>
+          <button className="btn btn-lg btn-outline-dark me-3" onClick={() => filterProduct("jewelery")}>쥬얼리</button>
         </div>
         {filter.map((product)=> {
           return(
