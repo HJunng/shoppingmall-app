@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Skeleton from 'react-loading-skeleton';
+import { NavLink } from 'react-router-dom';
 
 export const Products = () => {
 
@@ -64,16 +65,16 @@ export const Products = () => {
           return(
             <>
               <div className="col-md-3 mb-4">
-                <div class="card h-100 text-center p-4 key={product.id">
-                  <img src={product.image} class="card-img-top" alt={product.title} height="200px" />
-                  <div class="card-body">
-                    <h5 class="card-title mb-0">{product.title.substring(0,12)}...</h5>
+                <div className="card h-100 text-center p-4 key={product.id">
+                  <img src={product.image} className="card-img-top" alt={product.title} height="200px" />
+                  <div className="card-body">
+                    <h5 className="card-title mb-0">{product.title.substring(0,12)}...</h5>
                     <br/>
                     <div className='d-flex justify-content-between'>
-                    <p class="card-text lead fw-bold">
+                    <p className="card-text lead fw-bold">
                       $ {product.price}
                     </p>
-                    <a href="#" class="btn btn-sm btn-outline-dark">장바구니에 담기</a>
+                    <NavLink to={`/products/${product.id}`} className="btn btn-sm btn-outline-dark card-btn">장바구니에 담기</NavLink>
                     </div>
                   </div>
                 </div>
@@ -89,7 +90,7 @@ export const Products = () => {
       <div className="container my-5 py-5">
         <div className="row">
           <div className="col-12 mb-5">
-            <h1 className='display-6 fw-bolder text-center'>Latest Products</h1>
+            <h1 className='display-6 fw-bolder text-center'>Products</h1>
             <hr />
           </div>
         </div>

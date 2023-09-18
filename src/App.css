@@ -3,5 +3,9 @@
   font-size: 18px;
 }
 .card-text{
-  font-size:x-large;
+  font-size:large;
+  margin-top: 1rem;
+}
+.card-btn{
+  margin: 1rem 0;
 }
