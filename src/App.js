@@ -4,16 +4,17 @@ import Product from './components/Product';
 import Products from './components/Products';
 import { Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Head from './components/Head';
+import Headers from './components/Headers';
+import CartDatails from './components/CartDatails';
 
 function App() {
   return (
     <>
-      <Head/>
-      <Header />
+      <Headers />
       <Routes>
         <Route exact path="/" element={<Products />} />
         <Route exact path="/products/:id" element={<Product />} />
+        <Route exact path="/cart" element={<CartDatails />}/>
       </Routes>
     </>
   );

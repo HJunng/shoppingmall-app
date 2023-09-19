@@ -10,11 +10,7 @@ export const Header = () => {
           <NavLink className="navbar-brand fw-bold fs-2" to="/">
             Shop
           </NavLink>
-          <div id='ex4'>
-            <span className="p1 fa-stack fa-2x has-badge" data-count={1}></span>
-            <i className="fa-solid fa-cart-shopping"></i>
-          </div>
-          {/* <div className="buttons">
+          <div className="buttons">
             <NavLink to="login" className="btn btn-outline-dark">
               <i className="fa-solid fa-right-to-bracket me-1"></i> Login</NavLink>
               <NavLink to="/register" className="btn btn-outline-dark ms-2">
@@ -22,7 +18,7 @@ export const Header = () => {
               <NavLink to="/cart" className="btn btn-outline-dark ms-2">
                 <span className='p1 fa-2x fa-stack has-badge' data-count={1}>
               <i className="fa-solid fa-cart-shopping me-1"></i></span> Cart</NavLink>
-            </div> */}
+            </div>
         </div>
       </nav>
     </div>
