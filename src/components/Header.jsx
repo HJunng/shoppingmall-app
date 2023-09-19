@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Container from 'react-bootstrap/Container'
 
-export const Navbar = () => {
+export const Header = () => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-white py-3 shadow-sm">
@@ -9,32 +10,23 @@ export const Navbar = () => {
           <NavLink className="navbar-brand fw-bold fs-2" to="/">
             Shop
           </NavLink>
-          {/* <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button> */}
-          <div className="buttons">
+          <div id='ex4'>
+            <span className="p1 fa-stack fa-2x has-badge" data-count={1}></span>
+            <i className="fa-solid fa-cart-shopping"></i>
+          </div>
+          {/* <div className="buttons">
             <NavLink to="login" className="btn btn-outline-dark">
               <i className="fa-solid fa-right-to-bracket me-1"></i> Login</NavLink>
               <NavLink to="/register" className="btn btn-outline-dark ms-2">
               <i className="fa-solid fa-user-plus me-1"></i> Register</NavLink>
               <NavLink to="/cart" className="btn btn-outline-dark ms-2">
-              <i className="fa-solid fa-cart-shopping me-1"></i> Cart (0)</NavLink>
-            </div>
-          {/* <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            
-          </div> */}
+                <span className='p1 fa-2x fa-stack has-badge' data-count={1}>
+              <i className="fa-solid fa-cart-shopping me-1"></i></span> Cart</NavLink>
+            </div> */}
         </div>
       </nav>
     </div>
   );
 };
 
-export default Navbar;
+export default Header;
