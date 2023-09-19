@@ -13,11 +13,11 @@ const Product = () => {
     const getProduct = async() => {
       setLoading(true);
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      setProduct(await response.json());
+      setProduct(await response.json()); 
       setLoading(false);
     }
     getProduct();
-  }, []);
+  },[])
 
   const Loading = () => {
     return(
@@ -42,7 +42,7 @@ const Product = () => {
     return(
       <>
         <div className="col-md-6">
-          <img src={product.image} alt={product.title} height="500px" width="500px" />
+          <img src={product.image} alt={product.title} height={400} width={400} />
         </div>
         <div className="col-md-6">
           <h4 className='text-uppercase text-black-50'>
@@ -50,11 +50,11 @@ const Product = () => {
           </h4>
           <h1 className='display-5'>{product.title}</h1>
           <p className="lead fw-bolder">
-            Rating <i className="fa fa-star"></i> {product.rating && product.rating.rate}
+            Rating <i className='fa fa-star'></i> {product.rating && product.rating.rate}
           </p>
           <h3 className="display-6 fw-bold my-4">
             $ {product.price}
-          </h3> 
+          </h3>
           <p className="lead">{product.description}</p>
           <button className="btn btn-outline-dark px-4 py-2">
             장바구니에 담기
@@ -68,11 +68,9 @@ const Product = () => {
   }
 
   return (
-    <div>
-      <div className="container py-5">
-        <div className="row py-5">
-          {loading ? <Loading/> : <ShowProduct/> }
-        </div>
+    <div className="container py-5">
+      <div className="row py-4">
+        {loading ? <Loading/> : <ShowProduct/> }
       </div>
     </div>
   )
